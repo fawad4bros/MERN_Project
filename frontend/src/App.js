@@ -9,14 +9,18 @@ import {
 } from "react-router-dom";
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/newPlace";
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/users" element={<Users />}></Route>
-        <Route path="/place/new" element={<NewPlace />}></Route>
-        <Route path="*" element={<Navigate to="/users" />}></Route>
-      </Routes>
+      <MainNavigation />
+      <main>
+        <Routes>
+          <Route path="/users" element={<Users />}></Route>
+          <Route path="/place/new" element={<NewPlace />}></Route>
+          <Route path="*" element={<Navigate to="/users" />}></Route>
+        </Routes>
+      </main>
     </Router>
   );
 }
